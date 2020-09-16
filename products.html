@@ -3,60 +3,36 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content="" />
     <title>eMercado - Todo lo que busques está aquí</title>
-
-    <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/4.3/examples/album/"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
-      rel="stylesheet"
-    />
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet"/>
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
-      <div
-        class="container d-flex flex-column flex-md-row justify-content-between"
-      >
-        <a class="py-2 d-none d-md-inline-block" href="nuevoindex.html"
-          >Inicio</a
-        >
-        <a class="py-2 d-none d-md-inline-block" href="categories.html"
-          >Categorías</a
-        >
-        <a class="py-2 d-none d-md-inline-block" href="products.html"
-          >Productos</a
-        >
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <!--<a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a> -->
-
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a> 
         <div class="dropdown" id="datos-usuario">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="persona" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          </button>
+          <button class="btn btn-primary dropdown-toggle"type="button"id="persona" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false"></button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="cart.html">Ver carrito</a>
             <a class="dropdown-item" href="my-profile.html">Perfil</a>
-            <a class="dropdown-item"  id="boton-salir">Salir</a>
+            <a class="dropdown-item" href="nuevoindex.html">Página de inicio</a>
+            <a class="dropdown-item" id="boton-salir">Salir</a>
           </div>
         </div>
         <!-- aca empieza el nombre del usuario y el boton para salir-->
         <!--<div id="datos-usuario" style="display:none;">-->
-         <!-- <p id="persona"></p> -->
-         <!-- <button id="boton-salir" class="btn btn-primary" style="float:right">Salir</button> -->
-        </div>
-        <!-- aca termina el nombre del usuario y el boton para salir-->
-
-
+        <!-- <p id="persona"></p> -->
+        <!-- <button id="boton-salir" class="btn btn-primary" style="float:right">Salir</button> -->
       </div>
+      <!-- aca termina el nombre del usuario y el boton para salir-->
     </nav>
     <div class="text-center p-4">
       <h2>Productos</h2>
@@ -67,44 +43,44 @@
       <h3>Filtra los precios según tus preferencias.</h3>
 
       <div>
-        
-          <input type="text" id="Caja-min" placeholder="min." />
+        <input type="text" id="Caja-min" placeholder="min." />
 
-          <input type="text" id="Caja-max" placeholder="max." />
-          <button id="boton-filtrar">Filtrar</button>
-          <button id="boton-limpiar">Limpiar</button>
-        
+        <input type="text" id="Caja-max" placeholder="max." />
+        <button id="boton-filtrar" class="btn btn-primary">Filtrar</button>
+        <button id="boton-limpiar" class="btn btn-primary">Limpiar</button>
       </div>
     </div>
     <div class="container">
       <div class="row">
         <div class="col text-right">
           <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-              <label class="btn btn-light active" id="mayor-precio" >
-                  <input type="radio" name="options" autocomplete="off" checked>Mayor precio
-              </label>
-              <label class="btn btn-light" id="menor-precio" >
-                  <input type="radio" name="options" autocomplete="off">Menor precio
-              </label>
-              <label class="btn btn-light" id="mayor-importancia" >
-                  <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Mas importante
-              </label>
+            <label class="btn btn-light active" id="mayor-precio">
+              <input
+                type="radio"
+                name="options"
+                autocomplete="off"
+                checked
+              />Mayor precio
+            </label>
+            <label class="btn btn-light" id="menor-precio">
+              <input type="radio" name="options" autocomplete="off" />Menor
+              precio
+            </label>
+            <label class="btn btn-light" id="mayor-importancia">
+              <input type="radio" name="options" autocomplete="off" /><i
+                class="fas fa-sort-amount-down mr-1"
+              ></i
+              >Mas importante
+            </label>
           </div>
-      </div>
+        </div>
       </div>
     </div>
-    <div id="cualquier-nombre">
-
-      
-    </div>
+    <div id="cualquier-nombre"></div>
 
     <!-- --------------------ENTREGA 2--------------------- !-->
-   
-   
-    <div id="listado">
 
-
-    </div>
+    <div id="listado"></div>
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">
