@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         if (camposCompletos) {
 
-            window.location.href = "nuevoindex.html";
+            window.location.href = "principal.html";
 
 
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
                         localStorage.setItem('usuario-logeado', JSON.stringify({ email: entradaEmail.value}));
 
-                        window.location = 'nuevoindex.html';
+                        window.location = 'principal.html';
                     }
                     
                     else{
