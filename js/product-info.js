@@ -3,11 +3,11 @@
 //elementos HTML presentes.
 var currentProductsArray = [];
 var comentariosArray = [];
+var autosArray =[];
 
 
 function ShowAuto(array, arrayComments){
     
-
 
         console.log(currentProductsArray);
         let auto = currentProductsArray;
@@ -60,6 +60,21 @@ function ShowAuto(array, arrayComments){
 
 }
 
+function mostrarProdRel(arrayListado, arrayRelacionados){
+    let contenido = '<hr>';
+    arrayRelacionados.forEach(function(i){
+        contenido += 'Auto: ' + arrayListado[i].name + '<br>';
+        contenido += 'Descripción: ' + arrayListado[i].description + '<br>';
+        contenido += 'Costo: ' + arrayListado[i].currency + arrayListado[i].cost + '<br>';
+        contenido += '<img src="'+ arrayListado[i].imgSrc +'" >'
+        contenido += '<br><hr><br>'
+    });
+
+    document.getElementById("autosRelacionados").innerHTML += contenido;
+
+}
+
+
 
 
 document.addEventListener("DOMContentLoaded" , function (e){
@@ -69,11 +84,21 @@ document.addEventListener("DOMContentLoaded" , function (e){
         }
     });
 
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
+        if(resultObj.status === "ok"){
+            autosArray = resultObj.data;
+
+        }
+    });
+
     getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
         if(resultObj.status === "ok"){
             currentProductsArray = resultObj.data;
 
             ShowAuto(currentProductsArray, comentariosArray);
+            mostrarProdRel(autosArray, currentProductsArray.relatedProducts);
         }
     });
+
+    
 });
