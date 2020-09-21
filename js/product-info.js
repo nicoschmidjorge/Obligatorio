@@ -61,19 +61,51 @@ function ShowAuto(array, arrayComments){
 }
 
 function mostrarProdRel(arrayListado, arrayRelacionados){
-    let contenido = '<hr>';
+    let contenido = '<br>';
     arrayRelacionados.forEach(function(i){
-        contenido += 'Auto: ' + arrayListado[i].name + '<br>';
-        contenido += 'Descripción: ' + arrayListado[i].description + '<br>';
-        contenido += 'Costo: ' + arrayListado[i].currency + arrayListado[i].cost + '<br>';
-        contenido += '<img src="'+ arrayListado[i].imgSrc +'" >'
-        contenido += '<br><hr><br>'
+        contenido += `
+        <a href="product-info.html" class="list-group-item list-group-item-action">
+            <div class="row">
+                <div class="col-3">
+                    <img src="` + arrayListado[i].imgSrc  + `" alt="` + arrayListado[i].description + `" class="img-thumbnail">
+                </div>
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">`+ arrayListado[i].name +`</h4>
+                        <small class="text-muted">` + arrayListado[i].soldCount + ` artículos</small>
+                    </div>
+                    <p class="mb-1">` + arrayListado[i].description + `</p>
+                    <br>
+                    <p class="mb-1">` + 'Precio: ' + arrayListado[i].cost + ' ' + arrayListado[i].currency + `</p>
+                </div>
+            </div>
+        </a>`
     });
 
     document.getElementById("autosRelacionados").innerHTML += contenido;
 
 }
+/*
 
+contenido = `
+<a href="product-info.html" class="list-group-item list-group-item-action">
+    <div class="row">
+        <div class="col-3">
+            <img src="` + arrayListado[i].imgSrc  + `" alt="` + arrayListado[i].description + `" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <div class="d-flex w-100 justify-content-between">
+                <h4 class="mb-1">`+ arrayListado[i].name +`</h4>
+                <small class="text-muted">` + arrayListado[i].soldCount + ` artículos</small>
+            </div>
+            <p class="mb-1">` + arrayListado[i].description + `</p>
+            <br>
+            <p class="mb-1">` + 'Precio: ' + arrayListado[i].cost + ' ' + arrayListado[i].currency + `</p>
+        </div>
+    </div>
+</a>`
+
+*/
 
 
 
