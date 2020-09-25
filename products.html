@@ -40,6 +40,7 @@
       <p class="lead">Verás aquí todos los productos del sitio.</p>
     </div>
 
+    <!--
     <div id="filtro">
       <h3>Filtra los precios según tus preferencias.</h3>
 
@@ -50,9 +51,13 @@
         <button id="boton-filtrar" class="btn btn-primary">Filtrar</button>
         <button id="boton-limpiar" class="btn btn-primary">Limpiar</button>
       </div>
-    </div>
-    <div class="container">
-      <div class="row">
+    </div> 
+
+    -->
+<div class="container">
+  <div class="row justify-content-end">
+   <!-- <div class="col-md-6"></div> -->
+
         <div class="col text-right">
           <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
             <label class="btn btn-light active" id="mayor-precio">
@@ -75,7 +80,28 @@
             </label>
           </div>
         </div>
-      </div>
+        <div class="col-md-6 col-sm-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <div class="col">
+              <p class="font-weight-normal text-right my-2">Precio:</p>
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="Caja-min">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="Caja-max">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="boton-filtrar">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="boton-limpiar">Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      
+      </div> 
     </div>
     <div id="cualquier-nombre"></div>
 

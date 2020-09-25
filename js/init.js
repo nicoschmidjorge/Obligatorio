@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(e){
   let informacionUsuario = document.getElementById("datos-usuario");
 
   if (usuarioAdentro) {
-    persona.innerText = persona.innerText + 'Usuario logueado: ' + usuarioAdentro;
+    persona.innerText = persona.innerText + usuarioAdentro;
     informacionUsuario.style = "display: inline-block";// <-- estoy trancado aca///
   }
 

@@ -80,7 +80,7 @@ function showAutos (){
                 </div>
             </a>`
            
-            contenido += '<button style="float: right;" onclick="verAuto('+ auto.id +')">Ver libro</button>';
+            
 
         }
        document.getElementById("listado").innerHTML = contenido;
@@ -108,7 +108,25 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
     });
 
+    document.getElementById("mayor-precio").addEventListener("click", function(){
+        sortAndShowAutos(ORDER_ASC_BY_NAME);
+    });
 
+    document.getElementById("menor-precio").addEventListener("click", function(){
+        sortAndShowAutos(ORDER_DESC_BY_NAME);
+    });
+
+    document.getElementById("mayor-importancia").addEventListener("click", function(){
+        sortAndShowAutos(ORDER_BY_PROD_COUNT);
+    });
+
+
+    minPrecio = undefined;
+    maxPrecio = undefined;
+
+    showAutos();
+
+});
 
 document.getElementById("boton-filtrar").addEventListener("click", function() {
     
@@ -147,4 +165,3 @@ document.getElementById("boton-limpiar").addEventListener("click", function() {
 
 
 
-});

@@ -20,7 +20,7 @@ function ShowAuto(array, arrayComments){
             <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
-                        <img src="` + auto["images"][0] + `" alt="` + auto.description + `" class="img-thumbnail">
+                        <img src="` + auto["images"][0] + `" alt=" <br> <hr>` + auto.description + `" class="img-thumbnail">
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
@@ -67,7 +67,7 @@ function mostrarProdRel(arrayListado, arrayRelacionados){
         <a href="product-info.html" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
-                    <img src="` + arrayListado[i].imgSrc  + `" alt="` + arrayListado[i].description + `" class="img-thumbnail">
+                    <img src="` + arrayListado[i].imgSrc  + `" alt=" <br> <hr>` + arrayListado[i].description + `" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
