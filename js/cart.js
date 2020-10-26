@@ -59,7 +59,8 @@ function calcEnvio() {
         }
     }
 
-    let totalConEnvio = total + envio;
+    envio = (envio * total) / 100;
+    totalConEnvio = total + envio;
 
     let contenido = `
     <tr>
@@ -89,4 +90,31 @@ document.addEventListener("DOMContentLoaded", function(e) {
              calcEnvio();
         });
     } 
+
+    
+    let form = document.getElementById('necesita-validacion');
+
+    form.addEventListener('submit', function (event) {
+        if (form.checkValidity() === false) {
+            
+            event.preventDefault();
+            event.stopPropagation();
+            
+        };
+        form.classList.add('was-validated');
+    });
+    
+
+   $('#comprar').on('click', function (evento) {
+    if (!($('#nombre')[0].checkValidity() && $('#apellido')[0].checkValidity() && $('#calle')[0].checkValidity()
+        && $('#numero')[0].checkValidity() && $('#pais')[0].checkValidity())) {
+        evento.preventDefault();
+        evento.stopPropagation();
+        //aca tengo que poner un cartel 
+    }else{
+        //daca tengo que sacar ese cartel
+    }
+});
+
+
 });

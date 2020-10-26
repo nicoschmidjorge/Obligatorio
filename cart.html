@@ -40,18 +40,19 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
 
       <div class="dropdown" id="datos-usuario">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="persona" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="persona" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="cart.html">Ver carrito</a>
           <a class="dropdown-item" href="my-profile.html">Perfil</a>
-          <a class="dropdown-item"  href="principal.html">Página de inicio</a>
+          <a class="dropdown-item" href="principal.html">Página de inicio</a>
           <hr>
-          <a class="dropdown-item"  id="boton-salir">Salir</a>
+          <a class="dropdown-item" id="boton-salir">Salir</a>
         </div>
       </div>
-      
-      </div>
+
+    </div>
 
 
     </div>
@@ -62,60 +63,129 @@
     <h1>Carrito:</h1>
 
     <div class="carrito" id="carrito">
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Marca</th>
-                    <th>Precio unitario</th>
-                    <th>Cantidad</th>
-                    <th>Precio subtotal: </th>
-                    <th></th>
-            </thead>
-            <tbody id="articulo"> </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="4">Cantidad total de la compra:</td>
-                    <td id="total"></td>
-                    
-                </tr>
-            </tfoot>
-        </table>
-        <hr>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Producto</th>
+            <th>Precio unitario</th>
+            <th>Cantidad</th>
+            <th>Precio subtotal: </th>
+            <th></th>
+        </thead>
+        <tbody id="articulo"> </tbody>
+        <br>
+        <tfoot>
+          <tr>
+            <td colspan="4">Cantidad total de la compra:</td>
+            <td id="total"></td>
 
-        <h4>Zona de envío</h4>
+          </tr>
+        </tfoot>
+      </table>
+      <hr>
+      <br>
+      <br>
+
+
+      <h4>Zona de envío</h4>
+
+      <div>
+
+        <input id="montevideo" name="envio" type="radio" value="15" checked="" required="">
+        <label for="montevideo">Premium (2 - 5 días) - Costo del 15% sobre el subtotal.</label> <br>
+
+        <input id="sur" name="envio" type="radio" value="7" required="">
+        <label for="sur">Express (5 - 8 días) - Costo del 7% sobre el subtotal.</label> <br>
+
+        <input id="norte" name="envio" type="radio" value="5" required="">
+        <label for="norte">Standard (12 - 15 días) - Costo del 5% sobre el subtotal.</label> <br>
+
+      </div>
+
+
+      <br>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Precio</th>
+            <th>Sobre costo</th>
+            <th>Costo total</th>
+          </tr>
+        </thead>
+        <tbody id="totalEnvio"> </tbody>
+      </table>
+
+      <br>
+      <br>
 
         <div>
-
-            <input id="montevideo" name="envio" type="radio" value="2" checked="" required="">
-            <label for="montevideo">Montevideo: 2 días</label> <br>
-
-            <input id="sur" name="envio" type="radio" value="4" required="">
-            <label for="sur">Sur del Río Negro: 4 días</label> <br>
-
-            <input id="norte" name="envio" type="radio" value="6" required="">
-            <label for="norte">Norte del Río Negro: 6 días</label> <br>
+          <h4>Datos del socio:</h4>
+          <input id="nombre" type="text" class="form-control" placeholder="Nombre" required><br>
+          <span class="invalid-feedback">Campo invalido</span>
+          <input id="apellido" type="text" class="form-control" placeholder="Apellido" required><br>
+          <input id="calle" type="text" class="form-control" placeholder="Calle" required><br>
+          <input id="numero" type="text" class="form-control" placeholder="Numero" required><br>
+          <input id="pais" type="text" class="form-control" placeholder="País" required><br>
 
         </div>
 
-      
         <br>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Precio</th>
-                    <th>Sobre costo</th>
-                    <th>Costo total</th>
-                </tr>
-            </thead>
-            <tbody id="totalEnvio"> </tbody>
-        </table>
+        <button id="comprar" type="submit" class="btn btn-block btn-primary" data-toggle="modal"
+          data-target="#modalPagar">Comprar</button>
 
-        <br>
 
-        <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalPagar">Ingresar prestamo</button>
-        <br><br>
+      <br><br>
+
+      <div class="modal fade" id="modalPagar">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Ingresar datos:</h5>
+            </div>
+            <div class="modal-body">
+              <form action="principal.html" id="necesita-validacion" novalidate>
+
+                <div>
+                  <h4>Metodo de pago:</h4>
+                  <hr>
+                  <h4>Datos del envío:</h4>
+                  <label for="dpto">Departamento</label><br>
+                  <select class="form-control" id="dpto" required>
+                    <option value="" selected>Seleccione un departamento</option>
+                    <option value="1">Montevideo</option>
+                    <option value="2">Artigas</option>
+                    <option value="3">Canelones</option>
+                    <option value="4">Cerro Largo</option>
+                    <option value="5">Colonia</option>
+                    <option value="6">Durazno</option>
+                    <option value="7">Flores</option>
+                    <option value="8">Florida</option>
+                    <option value="9">Lavalleja</option>
+                    <option value="10">Maldonado</option>
+                    <option value="11">Paysandú</option>
+                    <option value="12">Río Negro</option>
+                    <option value="13">Rivera</option>
+                    <option value="14">Rocha</option>
+                    <option value="15">Salto</option>
+                    <option value="16">San José</option>
+                    <option value="17">Soriano</option>
+                    <option value="18">Tacuarembó</option>
+                    <option value="19">Treinta y Tres</option>
+                  </select><br>
+                  <input type="text" class="form-control" placeholder="Dirección" required><br>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-block btn-success">Confirmar préstamo</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
 
