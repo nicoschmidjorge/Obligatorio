@@ -63,7 +63,7 @@ function showAutos (){
         if (((minPrecio == undefined) || (minPrecio != undefined && parseInt(auto.cost) >= minPrecio)) &&
         ((maxPrecio == undefined) || (maxPrecio != undefined && parseInt (auto.cost) <= maxPrecio))) {
             contenido += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
+            <a href="product-info.html" class="list-group-item list-group-item-action col-md-6" >
                 <div class="row">
                     <div class="col-3">
                         <img src="` + auto.imgSrc + `" alt="` + auto.description + `" class="img-thumbnail">
